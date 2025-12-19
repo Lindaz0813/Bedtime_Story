@@ -1,0 +1,12 @@
+Revise the story below using the judge's feedback.
+
+Goals:
+- Address all listed weaknesses
+- Keep the tone calm and bedtime-appropriate
+- Maintain the original theme and characters
+
+Original story:
+{story}
+
+Judge feedback:
+{feedback}
