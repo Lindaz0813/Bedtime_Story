@@ -13,5 +13,10 @@ Story structure:
 4. Resolution with emotional growth
 5. Calm, reassuring ending suitable for bedtime
 
+Category: {selected_category}
+
+Instructions for category:
+{selected_category_instructions}
+
 Story request:
 {user_request}

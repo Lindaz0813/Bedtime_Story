@@ -27,9 +27,11 @@ def load_prompt(filename: str) -> str:
     except FileNotFoundError:
         raise RuntimeError(f"Prompt file not found: {filename}")
 
-def storyteller_prompt(user_request: str) -> str:
+def storyteller_prompt(selected_category: str, instructions: str, user_request: str) -> str:
     template = load_prompt("story_teller_prompt.txt")
-    return template.format(user_request=user_request)
+    return template.format(selected_category=selected_category, 
+                           selected_category_instructions=instructions, 
+                           user_request=user_request)
 
 def judge_prompt(story: str) -> str:
     template = load_prompt("judge_prompt.txt")

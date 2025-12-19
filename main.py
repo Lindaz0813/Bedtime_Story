@@ -3,11 +3,43 @@ from helpers import *
 """
 Before submitting the assignment, describe here in a few sentences what you would have built next if you spent 2 more hours on this project:
 
-I would like to add more evaluation metrics and get some statistics on how AI ranks the stories, and provide more examples to test it out
+I would like to add more evaluation metrics and get some statistics on how AI ranks the stories. 
+Prepare a bigger set of test prompts and run to evaluate robustness.
+Check for edge cases, e.g., long stories, abstract topics, or unusual characters.
+Build a simple web interface or Jupyter notebook UI.
+
 """
 
 def main():
-    user_input = input("What kind of story do you want to hear?").strip()
+
+    categories = [
+        ("Animal Adventures 🐾", "Emphasize anthropomorphic animals, nature settings, and friendship-based conflicts. Use simple dialogue."),
+        ("Magic & Imagination ✨", "Include a gentle magical element. Encourage imaginative discoveries and safe 'magical mishaps.'"),
+        ("Everyday Life & Lessons 🏡", "Focus on small problems relatable to 5–10-year-olds. Highlight empathy, kindness, and problem-solving."),
+        ("Emotional Comfort & Coping 💛", "Include feelings, reassurance, calming routines, and positive emotional resolution."),
+        ("Curiosity & Exploration 🔍", "Emphasize discovery, curiosity, and small adventures. Reward exploration and gentle problem-solving."),
+        ("Cute & Wholesome 🐰", "Maximize heartwarming and adorable elements. Emphasize gentle humor, affection, and safe settings.")
+    ]
+    # Display categories
+    print("Please select the type of story you want:")
+    for i, (name, _) in enumerate(categories, start=1):
+        print(f"{i}. {name}")
+
+    # Prompt user to select by number
+    selection = input("Enter the number of your choice (default 1): ").strip()
+    try:
+        selection_num = int(selection)
+        if 1 <= selection_num <= len(categories):
+            selected_category_name, selected_category_instructions = categories[selection_num - 1]
+        else:
+            selected_category_name, selected_category_instructions = categories[0]  # default
+    except ValueError:
+        selected_category_name, selected_category_instructions = categories[0]  # default
+
+    print(f"\nYou selected: {selected_category_name}\n")
+
+    # User story request
+    user_input = input("What kind of story do you want to hear? ").strip()
     if not user_input:
         user_input = "A story about a girl named Alice and her best friend Bob, who happens to be a cat."
 
@@ -16,7 +48,8 @@ def main():
     ensure_folder(folder_path)
 
     # Step 1: Generate story
-    story = call_model(storyteller_prompt(user_input))
+    story = call_model(storyteller_prompt(selected_category_name, 
+                                          selected_category_instructions, user_input))
     print("\n--- Initial Story ---\n")
     print(story)
     story_path = f"{folder_path}/{filename}_initial.txt"
