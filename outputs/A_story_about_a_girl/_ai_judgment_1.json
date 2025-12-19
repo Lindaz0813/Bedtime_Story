@@ -1,0 +1,16 @@
+{
+  "scores": {
+    "age_appropriateness": 5,
+    "clarity": 4,
+    "engagement": 3,
+    "emotional_warmth": 4,
+    "coherence": 5,
+    "bedtime_suitability": 3
+  },
+  "suggestions": [
+    "Add more interactive elements for engagement, like asking the reader questions or prompts.",
+    "Include more sensory details to enhance the emotional connection with the characters.",
+    "Consider shortening some parts to maintain bedtime suitability and keep the story flowing smoothly."
+  ],
+  "weakness": "The story may be a bit too long and detailed for a calm bedtime read, potentially leading to restlessness in children."
+}

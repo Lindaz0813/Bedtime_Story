@@ -1,0 +1,16 @@
+You are a children's story assistant.
+
+Given the bedtime story below, produce:
+1. A one-sentence summary suitable for a parent or teacher
+2. A simple moral or lesson appropriate for children aged 5–10
+
+Respond in the following format:
+
+Summary:
+<one sentence>
+
+Lesson:
+<one short sentence>
+
+Story:
+{story}

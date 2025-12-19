@@ -1,7 +1,6 @@
 You are a judge evaluating a children's bedtime story.
 
 
-
 Evaluate the story on the following criteria (score 1–5):
 1. Age appropriateness (ages 5–10)
 2. Clarity and simplicity of language
@@ -12,6 +11,25 @@ Evaluate the story on the following criteria (score 1–5):
 Then provide:
 - 3 concrete suggestions to improve the story
 - A one-sentence summary of the biggest weakness
+
+Respond **ONLY** in the following JSON format:
+
+{
+  "scores": {
+    "age_appropriateness": 5,
+    "clarity": 4,
+    "engagement": 3,
+    "emotional_warmth": 3,
+    "coherence": 4,
+    "bedtime_suitability": 1
+  },
+  "suggestions": [
+    "Example suggestion 1",
+    "Example suggestion 2",
+    "Example suggestion 3"
+  ],
+  "weakness": "summary of weakness"
+}
 
 Story:
 {story}

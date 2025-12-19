@@ -1,0 +1,16 @@
+{
+  "scores": {
+    "age_appropriateness": 5,
+    "clarity": 4,
+    "engagement": 3,
+    "emotional_warmth": 3,
+    "coherence": 4,
+    "bedtime_suitability": 1
+  },
+  "suggestions": [
+    "Add more interactive elements for engagement (e.g., asking the reader questions)",
+    "Include more sensory details to enhance emotional warmth",
+    "Simplify the language further for better clarity and bedtime suitability"
+  ],
+  "weakness": "The story lacks a sense of urgency or conflict, which may make it less engaging for children before bedtime."
+}
